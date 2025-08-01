@@ -1,0 +1,26 @@
+{
+  "public/images/landing/banner_background.jpg": {
+    "file": "assets/banner_background-30c41708.jpg",
+    "src": "public/images/landing/banner_background.jpg"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-c684937d.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/css/app.scss": {
+    "file": "assets/app-bded33e8.css",
+    "isEntry": true,
+    "src": "resources/css/app.scss"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-f93993be.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  },
+  "resources/js/custom.js": {
+    "file": "assets/custom-4ed993c7.js",
+    "isEntry": true,
+    "src": "resources/js/custom.js"
+  }
+}

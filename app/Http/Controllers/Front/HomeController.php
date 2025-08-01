@@ -34,7 +34,7 @@ class HomeController extends Controller
         if(is_numeric($mobileNoOrId)){
             if (strlen($mobileNoOrId) == 10) {
                 $data = Goodluck2020::where('MobileNo', $mobileNoOrId)->get();
-                $AssociatedNumbers = Goodluck2020::where('CNIC', $data[0]->CNIC)->where('MobileNo', '!=', $mobileNoOrId)->pluck('MobileNo')->toArray();
+                $AssociatedNumbers = $data->count() > 0 ? Goodluck2020::where('CNIC', $data[0]->CNIC)->where('MobileNo', '!=', $mobileNoOrId)->pluck('MobileNo')->toArray() : [];
             } elseif (strlen($mobileNoOrId) == 13) {
                 $data = Goodluck2020::where('CNIC', $mobileNoOrId)->get();
                
