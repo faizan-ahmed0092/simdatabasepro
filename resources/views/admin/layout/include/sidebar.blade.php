@@ -7,7 +7,7 @@
                         class="brand-logo">
                     </span>
                     <img src="" style="width:38px">
-                    <h2 class="brand-text" style="margin-top:0px">VFS</h2>
+                    <h2 class="brand-text" style="margin-top:0px">Simdatabasepro</h2>
                 </a></li>
             <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse"><i
                         class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i><i

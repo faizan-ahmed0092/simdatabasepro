@@ -8,6 +8,8 @@
     <meta name="description" content="@yield('description')">
    <meta name="keywords" content="{{ $page->keywords ?? 'SIM Database Pro' }}" />
    <link rel="canonical" href="{{ url()->current() }}" />
+   {{-- <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}"> --}}
+
     @php
         $googleAdScript = getGoogleAdScript();
     @endphp
@@ -23,42 +25,8 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-{{-- <link rel="stylesheet" href="{{ asset('assets/css/modern-design.css') }}"> --}}
     
-    <style>
-        .fixed-bottom-right {
-            position: fixed;
-            bottom: 40px;
-            right: 20px;
-            z-index: 9999;
-            padding: 12px 25px; /* Add padding to make it pill-shaped */
-            border-radius: 50px !important; /* Make it pill-shaped */
-            background-color: #ffffff;
-            color: #25D366; /* WhatsApp Green */
-            font-weight: bold;
-            font-size: 16px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-decoration: none;
-            display: flex;
-            align-items: center; /* Align the items in the center vertically */
-            justify-content: center; /* Ensure the content is aligned horizontally */
-            width: auto; /* Automatically adjust the width based on the content */
-            height: auto; /* Automatically adjust the height */
-            gap: 10px; /* Space between the WhatsApp icon and the text */
-        }
-        
-        .fixed-bottom-right i {
-            font-size: 20px; /* WhatsApp icon size */
-        }
-        
-        .fixed-bottom-right:hover {
-            background-color: #f1f1f1; /* Change color on hover */
-        }
-         .whatsapp-icon {
-              width: 30px;
-              margin-right: 10px;
-        }
-    </style>
+  
     @vite(['resources/js/app.js', 'resources/css/app.scss'])
     @stack('css')
 </head>
@@ -66,7 +34,7 @@
 
     @include('front.include.header')
     @yield('content')
-   <div class="container">
+   <div class="container py-5">
     @include('front.components.questions')
    @if(request()->routeIs('faqs'))
      @include('front.components.contactus')

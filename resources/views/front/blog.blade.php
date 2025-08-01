@@ -5,34 +5,41 @@
 @endpush
 
 @section('content')
-<div class="container mt-5">
-    
-    <div class="row ">
-        <div class="col-12 text-center mb-5">
-            <h2 class="display-4 fw-bolder">
-               Blog Posts
-            </h2>
+<div class="blog-section">
+    <div class="container">
+        <div class="blog-header">
+            <h1 class="blog-title">Blog Posts</h1>
+            <p class="blog-subtitle">Stay updated with the latest insights and information</p>
         </div>
-        @foreach($items as $item)
-         <div class="col-xl-4 col-md-6 col-12 my-3">
-          <div class="card h-100 shadow-sm border-primary-subtle p-3">
-            <div class="card-body">
-              <h5 class="card-title text-primary fw-bold">
-                {{ $item->title }}
-              </h5>
-              <p class="card-text text-muted">
-                {{ \Illuminate\Support\Str::words($item->meta_description, 20, '...') }}
-              </p>
-            </div>
-            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-0">
-             <a href="{{route('page',$item->slug)}}" class="text-primary fw-medium text-decoration-none">
-                Read More →
-            </a>
-              <small class="text-muted">{{ \Carbon\Carbon::parse($item->created_at)->format('d M y')  }}</small>
-            </div>
-          </div>
+        
+        <div class="blog-grid">
+            @foreach($items as $item)
+            <article class="blog-card">
+                <div class="blog-card-header">
+                    <span class="blog-badge">Blog</span>
+                    <h2 class="blog-card-title">{{ $item->title }}</h2>
+                </div>
+                
+                <div class="blog-card-body">
+                    <p class="blog-card-description">
+                        {{ \Illuminate\Support\Str::words($item->meta_description, 20, '...') }}
+                    </p>
+                </div>
+                
+                <div class="blog-card-footer">
+                    <a href="{{route('page',$item->slug)}}" class="blog-read-more">
+                        Read More
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                    
+                    <div class="blog-date">
+                        <span class="blog-date-day">{{ \Carbon\Carbon::parse($item->created_at)->format('d') }}</span>
+                        <span class="blog-date-month">{{ \Carbon\Carbon::parse($item->created_at)->format('M Y') }}</span>
+                    </div>
+                </div>
+            </article>
+            @endforeach
         </div>
-        @endforeach
     </div>
 </div>
 @endsection
