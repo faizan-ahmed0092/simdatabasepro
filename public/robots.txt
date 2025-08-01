@@ -1,0 +1,150 @@
+# ======= ALLOW ALL SEARCH ENGINES TO CRAWL ESSENTIAL CONTENT =======
+User-agent: *
+Disallow:
+
+# ======= BLOCK PRIVATE, SENSITIVE & NON-INDEXABLE PAGES =======
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /user-dashboard/
+Disallow: /account-settings/
+Disallow: /checkout/
+Disallow: /cart/
+Disallow: /order-history/
+Disallow: /register/
+Disallow: /login/
+Disallow: /cgi-bin/
+Disallow: /temp/
+Disallow: /test-page/
+Disallow: /staging/
+Disallow: /backup/
+
+# ======= BLOCK DUPLICATE, FILTERED & DYNAMIC URL PARAMETERS =======
+Disallow: *?sort=
+Disallow: *?filter=
+Disallow: *?page=
+Disallow: *?orderby=
+Disallow: *?search=
+Disallow: *?view=
+Disallow: *?sessionid=
+Disallow: *?utm_source=
+Disallow: *?ref=
+Disallow: *?preview=
+Disallow: *?tracking=
+Disallow: *?fbclid=
+Disallow: *?gclid=
+Disallow: *?pk_campaign=
+
+# ======= ALLOW GOOGLE & BING TO CRAWL HIGH-VALUE PAGES =======
+Allow: /live-tracker
+Allow: /sim-information
+Allow: /sim-owner-detail
+Allow: /services
+Allow: /about-us
+Allow: /contact-us
+Allow: /disclaimer
+Allow: /terms-conditions
+Allow: /privacy-policy
+Allow: /FAQs
+Allow: /blog
+Allow: /avoid-pak-sim-database-fraud
+Allow: /sim-tracker-vs-mobile-tracker-which-is-best-for-you-in-2025
+Allow: /real-time-sim-tracking-tools
+Allow: /sim-owner-details-using-cnic
+Allow: /avoid-sim-card-fraud-pakistanis-2025
+Allow: /best-sim-number-detail-finder-tools
+Allow: /sims-registered-against-your-cnic
+Allow: /sim-verification-tools-apps
+Allow: /mobile-device-with-sim-tracker-tools
+Allow: /can-you-track-a-sim-without-consent
+Allow: /live-tracker-for-sim-in-pakistan-legal-or-illegal
+Allow: /mobile-number-tracking-methods
+Allow: /stolen-sim-card-guide
+Allow: /track-delivery-riders-in-pakistan
+Allow: /check-sims-registered-on-your-cnic
+Allow: /sitemap-index.xml
+
+# ======= GOOGLEBOT RULES =======
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /wp-content/uploads/
+Disallow: /wp-content/uploads/private/
+
+User-agent: Googlebot-News
+Allow: /news/
+Allow: /blogs/
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+User-agent: Googlebot-Discover
+Allow: /blogs/
+Allow: /news/
+
+User-agent: Googlebot-Video
+Allow: /videos/
+
+# ======= BINGBOT RULES =======
+User-agent: Bingbot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+User-agent: AdsBot-Bing
+Allow: /
+
+# ======= YAHOO SLURP RULES =======
+User-agent: Yahoo Slurp
+Allow: /
+
+# ======= YANDEXBOT RULES =======
+User-agent: YandexBot
+Allow: /
+
+User-agent: YandexImages
+Allow: /wp-content/uploads/
+
+User-agent: YandexVideo
+Allow: /videos/
+
+User-agent: YandexMobileBot
+Allow: /
+
+User-agent: YandexNews
+Allow: /news/
+Allow: /blogs/
+
+# ======= BAIDUSPIDER RULES =======
+User-agent: Baiduspider
+Allow: /
+
+# ======= BLOCK UNNECESSARY SEO TOOLS & SCRAPERS =======
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# ======= BLOCK BAD BOTS =======
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: Sogou Spider
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: Barkrowler
+Disallow: /
+
+User-agent: AspiegelBot
+Disallow: /
+# ======= SITEMAP SUBMISSION =======
+Sitemap: https://www.simowners.info/sitemap-index.xml
