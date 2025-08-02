@@ -7,9 +7,14 @@
     <title>@yield('title') - SimDatabase</title>
     {{-- <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}"/> --}}
     
+    <!-- Performance monitoring -->
+    <script src="{{asset('performance-monitor.js')}}" async></script>
+    
     <!-- Preconnect to external domains for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     
     <!-- Critical CSS - Inline essential styles -->
     <style>
@@ -19,23 +24,32 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             opacity: 0;
             transition: opacity 0.3s ease-in;
+            background: #f8f9fa;
         }
         body.loaded { opacity: 1; }
         
         /* Critical CSS for above-the-fold content */
-        .app-content { min-height: 100vh; }
+        .app-content { min-height: 100vh; background: #f8f9fa; }
         .content-wrapper { padding: 0; }
-        .navbar { background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,.1); }
-        .card { background: #fff; border-radius: 0.428rem; box-shadow: 0 4px 24px 0 rgba(34, 41, 47, 0.1); }
-        .btn { display: inline-block; padding: 0.786rem 1.5rem; border-radius: 0.358rem; text-decoration: none; }
+        .navbar { background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,.1); position: sticky; top: 0; z-index: 1000; }
+        .card { background: #fff; border-radius: 0.428rem; box-shadow: 0 4px 24px 0 rgba(34, 41, 47, 0.1); margin-bottom: 1rem; }
+        .btn { display: inline-block; padding: 0.786rem 1.5rem; border-radius: 0.358rem; text-decoration: none; border: none; cursor: pointer; }
         .btn-primary { background-color: #7367f0; border-color: #7367f0; color: #fff; }
         .form-control { display: block; width: 100%; padding: 0.438rem 1rem; border: 1px solid #d8d6de; border-radius: 0.357rem; }
-        .table { width: 100%; margin-bottom: 1rem; border-collapse: collapse; }
+        .table { width: 100%; margin-bottom: 1rem; border-collapse: collapse; background: #fff; }
         .table th, .table td { padding: 0.75rem; border-top: 1px solid #dee2e6; }
+        
+        /* Essential layout styles */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+        .row { display: flex; flex-wrap: wrap; margin: 0 -15px; }
+        .col { flex: 1; padding: 0 15px; }
         
         /* Hide non-critical content initially */
         .async-content { opacity: 0; transition: opacity 0.3s; }
         .async-content.loaded { opacity: 1; }
+        
+        /* Loading indicator */
+        .loading { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; }
     </style>
     
     <!-- Load Google Fonts asynchronously -->
@@ -44,14 +58,12 @@
 
     <!-- Critical CSS - Load only essential styles immediately -->
     <link rel="stylesheet" type="text/css" href="{{asset('admin/css/bootstrap.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('admin/css/colors.css')}}">
 
-    <!-- Semi-critical CSS - Load with high priority but async -->
+    <!-- All other CSS - Load asynchronously with lower priority -->
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/css/colors.css')}}" media="print" onload="this.media='all'">
     <link rel="stylesheet" type="text/css" href="{{asset('admin/vendors/css/vendors.min.css')}}" media="print" onload="this.media='all'">
     <link rel="stylesheet" type="text/css" href="{{asset('admin/css/bootstrap-extended.css')}}" media="print" onload="this.media='all'">
     <link rel="stylesheet" type="text/css" href="{{asset('admin/css/components.css')}}" media="print" onload="this.media='all'">
-
-    <!-- Non-critical CSS - Load asynchronously -->
     <link rel="stylesheet" type="text/css" href="{{asset('admin/vendors/css/charts/apexcharts.css')}}" media="print" onload="this.media='all'">
     <link rel="stylesheet" type="text/css" href="{{asset('admin/vendors/css/extensions/toastr.min.css')}}" media="print" onload="this.media='all'">
     <link rel="stylesheet" type="text/css" href="{{asset('admin/css/themes/dark-layout.css')}}" media="print" onload="this.media='all'">
@@ -67,6 +79,7 @@
     
     <!-- Fallback for browsers that don't support async CSS loading -->
     <noscript>
+        <link rel="stylesheet" type="text/css" href="{{asset('admin/css/colors.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('admin/vendors/css/vendors.min.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('admin/css/bootstrap-extended.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('admin/css/components.css')}}">
