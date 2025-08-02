@@ -19,7 +19,8 @@
     @endif
     
     <!-- Preload critical resources -->
-    <link rel="preload" href="{{ asset('assets/css/swiper-bundle.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    {{-- <link rel="preload" href="{{ asset('assets/css/swiper-bundle.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="{{ asset('assets/fonts/bootstrap-icons.woff2') }}" as="font" type="font/woff2" crossorigin> --}}
     
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -32,15 +33,9 @@
         {{-- <noscript><link rel="stylesheet" href="{{ asset('assets/css/swiper-bundle.min.css') }}"></noscript> --}}
     @endif
     
-    <!-- Load Font Awesome asynchronously -->
-    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" media="print" onload="this.media='all'"> --}}
-    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'"> --}}
-    
-    <!-- Fallback for browsers that don't support async CSS loading -->
-    {{-- <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
-    </noscript> --}}
+    <!-- Load Bootstrap Icons locally for better performance -->
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.min.css') }}" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.min.css') }}"></noscript>
   
     @vite(['resources/js/app.js', 'resources/css/app.scss'])
     @stack('css')

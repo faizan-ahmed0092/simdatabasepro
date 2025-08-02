@@ -130,3 +130,5 @@ Stack trace:
 [02-Aug-2025 14:50:08 UTC] PHP Warning:  Module "fileinfo" is already loaded in Unknown on line 0
 [02-Aug-2025 14:50:46 UTC] PHP Warning:  Module "fileinfo" is already loaded in Unknown on line 0
 [02-Aug-2025 18:06:29 UTC] PHP Warning:  Module "fileinfo" is already loaded in Unknown on line 0
+[02-Aug-2025 18:17:19 UTC] PHP Warning:  Module "fileinfo" is already loaded in Unknown on line 0
+[02-Aug-2025 18:17:37 UTC] PHP Warning:  Module "fileinfo" is already loaded in Unknown on line 0
