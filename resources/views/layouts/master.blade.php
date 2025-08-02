@@ -23,9 +23,9 @@
     <link rel="preload" href="{{ asset('assets/fonts/bootstrap-icons.woff2') }}" as="font" type="font/woff2" crossorigin> --}}
     
     <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    {{-- <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> --}}
     
    @if (request()->routeIs('index'))
         <!-- Swiper CSS - Load asynchronously -->
@@ -34,8 +34,8 @@
     @endif
     
     <!-- Load Bootstrap Icons locally for better performance -->
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.min.css') }}" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.min.css') }}"></noscript>
+    {{-- <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.min.css') }}" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.min.css') }}"></noscript> --}}
   
     @vite(['resources/js/app.js', 'resources/css/app.scss'])
     @stack('css')
