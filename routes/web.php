@@ -34,9 +34,6 @@ Route::middleware('auth')->group(function () {
 
 Route::post('/admin/file-upload', [PageController::class, 'fileUpload'])->name('admin.file.upload');
 Route::get('/' ,[HomeController::class, 'index'])->name('index');
-Route::get('live-tracker' ,[HomeController::class, 'liveTracker'])->name('live.tracker');
-Route::get('CNIC-tracker' ,[HomeController::class, 'liveTracker'])->name('cnic.tracker');
-Route::get('sim-owner-detail' ,[HomeController::class, 'liveTracker'])->name('sim.owner.detail');
 Route::get('services' ,[HomeController::class, 'services'])->name('services');
 Route::get('contact-us' ,[HomeController::class, 'contactUs'])->name('contact');
 Route::get('/FAQs' ,[HomeController::class, 'faqs'])->name('faqs');
