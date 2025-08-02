@@ -961,9 +961,13 @@ body {
     }
     
     .checker-input {
-        padding: 1rem 0;
+        padding: 1rem 0.75rem;
         font-size: 1rem;
+        width: -webkit-fill-available;
+        margin-bottom: 5px;
+        border: ridge;
     }
+
     
     .checker-btn {
         padding: 1rem 1.5rem;
