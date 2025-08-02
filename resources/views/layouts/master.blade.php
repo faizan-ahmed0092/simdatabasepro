@@ -32,11 +32,7 @@
         {{-- <link rel="stylesheet" href="{{ asset('assets/css/swiper-bundle.min.css') }}" media="print" onload="this.media='all'"> --}}
         {{-- <noscript><link rel="stylesheet" href="{{ asset('assets/css/swiper-bundle.min.css') }}"></noscript> --}}
     @endif
-    
-    <!-- Load Bootstrap Icons locally for better performance -->
-    {{-- <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.min.css') }}" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.min.css') }}"></noscript> --}}
-  
+    <!-- Bootstrap CSS -->
     @vite(['resources/js/app.js', 'resources/css/app.scss'])
     @stack('css')
 </head>
