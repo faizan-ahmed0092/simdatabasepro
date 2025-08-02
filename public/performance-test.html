@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .metric {
+            background: #f5f5f5;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .good { background: #d4edda; }
+        .warning { background: #fff3cd; }
+        .poor { background: #f8d7da; }
+    </style>
+</head>
+<body>
+    <h1>Website Performance Test</h1>
+    
+    <div class="metric" id="loadTime">
+        <h3>Page Load Time</h3>
+        <p id="loadTimeValue">Calculating...</p>
+    </div>
+    
+    <div class="metric" id="resources">
+        <h3>Resource Count</h3>
+        <p id="resourceCount">Calculating...</p>
+    </div>
+    
+    <div class="metric" id="size">
+        <h3>Total Page Size</h3>
+        <p id="pageSize">Calculating...</p>
+    </div>
+    
+    <div class="metric" id="mobile">
+        <h3>Mobile Performance Score</h3>
+        <p id="mobileScore">Calculating...</p>
+    </div>
+
+    <script>
+        // Performance monitoring
+        window.addEventListener('load', function() {
+            const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+            const loadTimeElement = document.getElementById('loadTimeValue');
+            const loadTimeDiv = document.getElementById('loadTime');
+            
+            loadTimeElement.textContent = loadTime + 'ms';
+            
+            if (loadTime < 1000) {
+                loadTimeDiv.className = 'metric good';
+            } else if (loadTime < 3000) {
+                loadTimeDiv.className = 'metric warning';
+            } else {
+                loadTimeDiv.className = 'metric poor';
+            }
+            
+            // Count resources
+            const resources = performance.getEntriesByType('resource');
+            const resourceCount = resources.length;
+            document.getElementById('resourceCount').textContent = resourceCount + ' resources loaded';
+            
+            // Calculate total size
+            let totalSize = 0;
+            resources.forEach(resource => {
+                if (resource.transferSize) {
+                    totalSize += resource.transferSize;
+                }
+            });
+            
+            const sizeInKB = Math.round(totalSize / 1024);
+            const sizeInMB = (totalSize / (1024 * 1024)).toFixed(2);
+            document.getElementById('pageSize').textContent = sizeInKB + ' KB (' + sizeInMB + ' MB)';
+            
+            // Estimate mobile performance score
+            let score = 100;
+            if (loadTime > 3000) score -= 30;
+            if (loadTime > 5000) score -= 20;
+            if (resourceCount > 50) score -= 20;
+            if (totalSize > 2 * 1024 * 1024) score -= 20; // 2MB
+            if (totalSize > 5 * 1024 * 1024) score -= 10; // 5MB
+            
+            const mobileScoreElement = document.getElementById('mobileScore');
+            const mobileDiv = document.getElementById('mobile');
+            
+            mobileScoreElement.textContent = score + '%';
+            
+            if (score >= 80) {
+                mobileDiv.className = 'metric good';
+            } else if (score >= 60) {
+                mobileDiv.className = 'metric warning';
+            } else {
+                mobileDiv.className = 'metric poor';
+            }
+        });
+    </script>
+</body>
+</html> 

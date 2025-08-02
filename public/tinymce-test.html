@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TinyMCE Test</title>
+    <script src="https://cdn.tiny.cloud/1/3w5uj4phr55fjx7tsgrvi4tfmw37e3z32ndp22289f10uw56/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+</head>
+<body>
+    <h1>TinyMCE Test Page</h1>
+    
+    <textarea id="editor">
+        <p>This is some sample content for testing TinyMCE.</p>
+    </textarea>
+    
+    <script>
+        window.addEventListener('load', function() {
+            if (typeof tinymce !== 'undefined') {
+                console.log('TinyMCE loaded successfully');
+                tinymce.init({
+                    selector: '#editor',
+                    plugins: 'advlist autolink lists link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table wordcount',
+                    toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code fullscreen',
+                    height: 300
+                });
+            } else {
+                console.error('TinyMCE failed to load');
+                document.body.innerHTML += '<p style="color: red;">TinyMCE failed to load!</p>';
+            }
+        });
+    </script>
+</body>
+</html> 

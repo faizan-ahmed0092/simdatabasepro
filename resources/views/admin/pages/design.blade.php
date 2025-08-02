@@ -121,22 +121,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
-    <script>
-  tinymce.init({
-    selector: '#editor',
-    plugins: 'advlist autolink lists link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table wordcount',
-    toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code fullscreen',
-    valid_elements: '*[*]', // allow all tags & attributes
-    extended_valid_elements: 'ins[style|class|data-ad-client|data-ad-slot|data-ad-format|data-tag-src],script[async|src|type|crossorigin]',
-    content_css: 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css',
-    image_title: true,
-    automatic_uploads: true,
-    images_upload_url: '{{ route('admin.file.upload') }}',
-    images_upload_credentials: true,
-    paste_data_images: true
-  });
-</script>
-<!--@include('admin.components.ckeditor1')-->
+@include('admin.components.ckeditor1')
 //<script>
 //     $(document).on('click', '.add_content', function () {
 //         let html = `<div class="row">
