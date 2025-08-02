@@ -44,7 +44,7 @@
          <!-- Image Column -->
          <div class="col-lg-6 mb-4 mb-lg-0">
           <div class="about-image-wrapper">
-            <img src="{{ asset('images/about_2.png') }}" alt="About Us Image" class="about-image">
+            <img src="{{ asset('images/about_22.png') }}" alt="About Us Image" class="about-image">
             <div class="image-overlay"></div>
           </div>
         </div>

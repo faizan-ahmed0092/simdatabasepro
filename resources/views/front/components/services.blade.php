@@ -174,7 +174,7 @@
             <!-- Fake WhatsApp -->
             <div class="service-card-modern">
                 <div class="service-image-wrapper">
-                    <img src="{{asset('images/landing/fake-whatsapp2.png')}}" alt="Fake WhatsApp" class="service-image">
+                    <img src="{{asset('images/landing/fake-whatsapp22.png')}}" alt="Fake WhatsApp" class="service-image">
                     <div class="service-overlay"></div>
                 </div>
                 <div class="service-content">
