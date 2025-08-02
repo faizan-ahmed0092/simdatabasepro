@@ -1,7 +1,25 @@
-<!-- Critical JavaScript - Load immediately -->
-<script src="{{asset('admin/vendors/js/vendors.min.js')}}"></script>
-<script src="{{asset('admin/js/core/app-menu.js')}}"></script>
+<!-- Critical JavaScript - Load only essential functionality immediately -->
 <script src="{{asset('admin/js/core/app.js')}}"></script>
+
+<!-- Progressive loading script -->
+<script>
+    // Show content progressively as it loads
+    document.addEventListener('DOMContentLoaded', function() {
+        // Show critical content immediately
+        document.body.classList.add('loaded');
+        
+        // Show async content as it loads
+        window.addEventListener('load', function() {
+            document.querySelectorAll('.async-content').forEach(function(el) {
+                el.classList.add('loaded');
+            });
+        });
+    });
+</script>
+
+<!-- Semi-critical JavaScript - Load with high priority but async -->
+<script src="{{asset('admin/vendors/js/vendors.min.js')}}" defer></script>
+<script src="{{asset('admin/js/core/app-menu.js')}}" defer></script>
 
 <!-- Non-critical JavaScript - Load asynchronously -->
 <script src="{{asset('admin/vendors/js/charts/apexcharts.min.js')}}" defer></script>

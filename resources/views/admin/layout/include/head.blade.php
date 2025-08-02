@@ -11,16 +11,45 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
+    <!-- Critical CSS - Inline essential styles -->
+    <style>
+        /* Prevent flash of unstyled content */
+        body { 
+            margin: 0; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            opacity: 0;
+            transition: opacity 0.3s ease-in;
+        }
+        body.loaded { opacity: 1; }
+        
+        /* Critical CSS for above-the-fold content */
+        .app-content { min-height: 100vh; }
+        .content-wrapper { padding: 0; }
+        .navbar { background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,.1); }
+        .card { background: #fff; border-radius: 0.428rem; box-shadow: 0 4px 24px 0 rgba(34, 41, 47, 0.1); }
+        .btn { display: inline-block; padding: 0.786rem 1.5rem; border-radius: 0.358rem; text-decoration: none; }
+        .btn-primary { background-color: #7367f0; border-color: #7367f0; color: #fff; }
+        .form-control { display: block; width: 100%; padding: 0.438rem 1rem; border: 1px solid #d8d6de; border-radius: 0.357rem; }
+        .table { width: 100%; margin-bottom: 1rem; border-collapse: collapse; }
+        .table th, .table td { padding: 0.75rem; border-top: 1px solid #dee2e6; }
+        
+        /* Hide non-critical content initially */
+        .async-content { opacity: 0; transition: opacity 0.3s; }
+        .async-content.loaded { opacity: 1; }
+    </style>
+    
     <!-- Load Google Fonts asynchronously -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet"></noscript>
 
-    <!-- Critical CSS - Load immediately -->
-    <link rel="stylesheet" type="text/css" href="{{asset('admin/vendors/css/vendors.min.css')}}">
+    <!-- Critical CSS - Load only essential styles immediately -->
     <link rel="stylesheet" type="text/css" href="{{asset('admin/css/bootstrap.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('admin/css/bootstrap-extended.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('admin/css/colors.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('admin/css/components.css')}}">
+
+    <!-- Semi-critical CSS - Load with high priority but async -->
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/vendors/css/vendors.min.css')}}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/css/bootstrap-extended.css')}}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/css/components.css')}}" media="print" onload="this.media='all'">
 
     <!-- Non-critical CSS - Load asynchronously -->
     <link rel="stylesheet" type="text/css" href="{{asset('admin/vendors/css/charts/apexcharts.css')}}" media="print" onload="this.media='all'">
@@ -38,6 +67,9 @@
     
     <!-- Fallback for browsers that don't support async CSS loading -->
     <noscript>
+        <link rel="stylesheet" type="text/css" href="{{asset('admin/vendors/css/vendors.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('admin/css/bootstrap-extended.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('admin/css/components.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('admin/vendors/css/charts/apexcharts.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('admin/vendors/css/extensions/toastr.min.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('admin/css/themes/dark-layout.css')}}">
