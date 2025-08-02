@@ -3,7 +3,7 @@
 @section('description', "Description")
 @push('css')
 {{-- <link rel="stylesheet" href="{{ asset('assets/css/modern-design.css') }}"> --}}
-<style>
+{{-- <style>
    .swiper-button-next, .swiper-button-prev {
         color: var(--primary-color);
     }
@@ -32,71 +32,11 @@
   .swiper-button-prev {
     left: 15px;
   }
-</style>
+</style> --}}
 @endpush
 @section('content')
 
-<!-- Services Section -->
-{{-- <section class="service-section">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Our Services</h2>
-            <p class="section-subtitle">Comprehensive SIM tracking and information services by SIM Database Pro</p>
-        </div>
-        
-        <div class="row justify-content-center g-4">
-            <div class="col-lg-2 col-md-4 col-sm-6">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="bi bi-sim"></i>
-                    </div>
-                    <h4 class="service-title">Sim Tracker</h4>
-                    <p class="service-description">Track SIM card details and ownership information</p>
-                </div>
-            </div>
-            
-            <div class="col-lg-2 col-md-4 col-sm-6">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="bi bi-person-vcard"></i>
-                    </div>
-                    <h4 class="service-title">CNIC Tracker</h4>
-                    <p class="service-description">Verify CNIC details and linked SIM cards</p>
-                </div>
-            </div>
-            
-            <div class="col-lg-2 col-md-4 col-sm-6">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="bi bi-person-lines-fill"></i>
-                    </div>
-                    <h4 class="service-title">Live Tracker</h4>
-                    <p class="service-description">Real-time tracking and monitoring services</p>
-                </div>
-            </div>
-            
-            <div class="col-lg-2 col-md-4 col-sm-6">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="bi bi-geo-alt-fill"></i>
-                    </div>
-                    <h4 class="service-title">IMEI Tracker</h4>
-                    <p class="service-description">Track device IMEI and location data</p>
-                </div>
-            </div>
-            
-            <div class="col-lg-2 col-md-4 col-sm-6">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="bi bi-telephone-fill"></i>
-                    </div>
-                    <h4 class="service-title">Call History</h4>
-                    <p class="service-description">Access detailed call history records</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> --}}
+
 
 <!-- CTA Section -->
 <div class="container">
@@ -129,7 +69,7 @@
 @include('front.components.contactus')
 
 <!-- Reviews Section -->
-<section class="review-section">
+{{-- <section class="review-section">
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">What Our Users Say</h2>
@@ -222,7 +162,7 @@
             <div class="swiper-pagination mt-4"></div>
         </div>
     </div>
-</section>
+</section> --}}
 
 <!-- Content Section -->
 <section class="content-section">
