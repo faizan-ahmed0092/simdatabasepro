@@ -112,3 +112,21 @@ Stack trace:
 #13 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
 #14 {main}
   thrown in /home/yaho/simowners.info/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 914
+[01-Aug-2025 10:42:12 UTC] PHP Warning:  Module "fileinfo" is already loaded in Unknown on line 0
+[01-Aug-2025 10:49:14 UTC] PHP Warning:  Module "fileinfo" is already loaded in Unknown on line 0
+[01-Aug-2025 10:49:18 UTC] PHP Warning:  Module "fileinfo" is already loaded in Unknown on line 0
+[01-Aug-2025 10:51:23 UTC] PHP Warning:  Module "fileinfo" is already loaded in Unknown on line 0
+[01-Aug-2025 10:51:26 UTC] PHP Warning:  Module "fileinfo" is already loaded in Unknown on line 0
+[01-Aug-2025 11:37:04 UTC] PHP Warning:  Module "fileinfo" is already loaded in Unknown on line 0
+[02-Aug-2025 13:40:56 UTC] PHP Warning:  Module "fileinfo" is already loaded in Unknown on line 0
+[02-Aug-2025 13:54:44 UTC] PHP Warning:  Module "fileinfo" is already loaded in Unknown on line 0
+[02-Aug-2025 14:07:44 UTC] PHP Warning:  Module "fileinfo" is already loaded in Unknown on line 0
+[02-Aug-2025 14:10:30 UTC] PHP Warning:  Module "fileinfo" is already loaded in Unknown on line 0
+[02-Aug-2025 14:21:53 UTC] PHP Warning:  Module "fileinfo" is already loaded in Unknown on line 0
+[02-Aug-2025 14:30:58 UTC] PHP Warning:  Module "fileinfo" is already loaded in Unknown on line 0
+[02-Aug-2025 14:34:22 UTC] PHP Warning:  Module "fileinfo" is already loaded in Unknown on line 0
+[02-Aug-2025 14:39:12 UTC] PHP Warning:  Module "fileinfo" is already loaded in Unknown on line 0
+[02-Aug-2025 14:40:06 UTC] PHP Warning:  Module "fileinfo" is already loaded in Unknown on line 0
+[02-Aug-2025 14:50:08 UTC] PHP Warning:  Module "fileinfo" is already loaded in Unknown on line 0
+[02-Aug-2025 14:50:46 UTC] PHP Warning:  Module "fileinfo" is already loaded in Unknown on line 0
+[02-Aug-2025 18:06:29 UTC] PHP Warning:  Module "fileinfo" is already loaded in Unknown on line 0
